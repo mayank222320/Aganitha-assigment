@@ -10,15 +10,6 @@ This project was built as part of a take-home challenge to demonstrate:
 - Implementation using modern web technologies
 - Clean coding practices and problem-solving skills
 
-## 👤 User Persona
-
-**Alex - College Student**
-- **Need**: Search for books in multiple ways for research and reading
-- **Use Cases**: 
-  - Find books by title for specific assignments
-  - Discover works by favorite authors
-  - Look up books by ISBN for textbooks
-  - Explore subjects for research topics
 
 ## ✨ Core Features
 
@@ -149,14 +140,14 @@ This application can be easily deployed to various platforms:
 This project was developed with a focus on:
 1. **User-Centered Design**: Every feature serves Alex's specific needs
 2. **Incremental Development**: Built core features first, enhanced iteratively
-3. **Code Quality**: TypeScript, proper error handling, and clean architecture
+3. **Code Quality**: Javascript, proper error handling, and clean architecture
 4. **Performance**: Optimized for fast loading and smooth interactions
 
 ## 📝 AI Collaboration Notes
 
 This project demonstrates effective collaboration with AI tools for:
 - Architecture planning and component design
-- TypeScript type definitions and API integration
+- Javascript type definitions and API integration
 - Responsive design implementation
 - Error handling and edge case management
 - Code optimization and best practices
