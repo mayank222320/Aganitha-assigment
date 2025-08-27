@@ -19,58 +19,58 @@ const SearchForm = ({ onSearch, loading }) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="relative">
+        <div className="relative group">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="h-5 w-5 text-gray-400" />
+            <Search className="h-6 w-6 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
           </div>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for books..."
-            className="block w-full pl-10 pr-24 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+            className="block w-full pl-12 pr-32 py-4 border-2 border-gray-200 rounded-2xl leading-5 bg-white/80 backdrop-blur-sm placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 text-lg shadow-lg hover:shadow-xl transition-all duration-200"
             disabled={loading}
           />
           <button
             type="button"
             onClick={() => setShowFilters(!showFilters)}
-            className="absolute inset-y-0 right-16 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute inset-y-0 right-20 flex items-center pr-3 text-gray-400 hover:text-blue-600 transition-colors"
           >
-            <Filter className="h-5 w-5" />
+            <Filter className="h-6 w-6" />
           </button>
           <button
             type="submit"
             disabled={loading || !query.trim()}
-            className="absolute inset-y-0 right-0 flex items-center pr-3"
+            className="absolute inset-y-0 right-0 flex items-center pr-2"
           >
-            <span className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-md transition-colors font-medium">
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-400 disabled:to-gray-400 text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 disabled:transform-none">
               {loading ? 'Searching...' : 'Search'}
             </span>
           </button>
         </div>
 
         {showFilters && (
-          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 animate-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-wrap gap-2">
-              <label className="text-sm font-medium text-gray-700 mr-3">Search by:</label>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-lg animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-wrap gap-4 items-center">
+              <label className="text-sm font-semibold text-gray-700 mr-2">Search by:</label>
               {[
                 { value: 'title', label: 'Title' },
                 { value: 'author', label: 'Author' },
                 { value: 'isbn', label: 'ISBN' },
                 { value: 'subject', label: 'Subject' }
               ].map(option => (
-                <label key={option.value} className="flex items-center space-x-2 cursor-pointer">
+                <label key={option.value} className="flex items-center space-x-2 cursor-pointer bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-xl transition-colors">
                   <input
                     type="radio"
                     name="searchType"
                     value={option.value}
                     checked={searchType === option.value}
                     onChange={(e) => setSearchType(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 focus:ring-2"
                   />
-                  <span className="text-sm text-gray-600">{option.label}</span>
+                  <span className="text-sm font-medium text-gray-700">{option.label}</span>
                 </label>
               ))}
             </div>
